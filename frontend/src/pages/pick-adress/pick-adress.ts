@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { API_CONFIG } from '../../config/api.config';
-import { ClienteDTO } from '../../models/cliente.dto';
+import { EnderecoDTO } from '../../models/endereco.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { StorageService } from '../../services/storage.service';
 
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: 'page-pick-adress',
+  templateUrl: 'pick-adress.html',
 })
-export class ProfilePage {
+export class PickAdressPage {
 
-  cliente: ClienteDTO;
+  items: EnderecoDTO[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public storage: StorageService,
-    public clienteService: ClienteService) {
+    public clienteService: ClienteService,
+    public storage: StorageService) {
   }
 
   ionViewDidLoad() {
@@ -26,26 +25,15 @@ export class ProfilePage {
     if (localUser && localUser.email) {
       this.clienteService.findByEmail(localUser.email)
         .subscribe(response => {
-          this.cliente = response as ClienteDTO;
-          this.getImageIfExists();
+          this.items = response['enderecos'];
         },
         error => {
           if (error.status == 403) {
             this.navCtrl.setRoot('HomePage');
           }
-        }
-      );
-    } else {
-      this.navCtrl.setRoot('HomePage');
+        });
+      } else {
+        this.navCtrl.setRoot('HomePage');
+      }
     }
-  }
-
-  getImageIfExists() {
-    this.clienteService.getImageFromBucket(this.cliente.id)
-    .subscribe(response => {
-      this.cliente.imageUrl = `${API_CONFIG.bucketBaseUrl}/cp${this.cliente.id}.jpg`;
-    },
-    error => {});
-  }
-
 }
