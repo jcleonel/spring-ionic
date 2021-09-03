@@ -39,20 +39,19 @@ Para ativar o modo responsivo basta apertar **Ctrl + Shift + M**. Na barrinha su
 
 
 
- ![](D:\Projetos\cursomc\spring-ionic\assets\imgs\1.png)     ![](D:\Projetos\cursomc\spring-ionic\assets\imgs\2.png) 
+![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/1.png)     ![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/2.png) 
 
 
 
-![](D:\Projetos\cursomc\spring-ionic\assets\imgs\4.png)     ![](D:\Projetos\cursomc\spring-ionic\assets\imgs\5.png) 
+![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/4.png)     ![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/5.png) 
 
-### Modelo conceitual do sistema
+### Modelo conceitual do sistema UML
 
-![](D:\Projetos\cursomc\spring-ionic\assets\imgs\ModeloConceitual.PNG) 
+![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/ModeloConceitual.PNG) 
 
 
 
-![](D:\Projetos\cursomc\spring-ionic\assets\imgs\ImplementacaoModeloConceitual.PNG) 
-
+![](https://github.com/jcleonel/spring-ionic/blob/master/assets/imgs/ImplementacaoModeloConceitual.PNG) 
 
 
 
