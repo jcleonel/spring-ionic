@@ -3,6 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular/components/app/menu-controller';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
+import { StorageService } from '../../services/storage.service';
 
 @IonicPage()
 @Component({
@@ -19,7 +20,8 @@ export class HomePage {
   constructor(
     public navCtrl: NavController, 
     public menu: MenuController,
-    public auth: AuthService) {
+    public auth: AuthService,
+    public storage: StorageService) {
   
   }
 
@@ -32,12 +34,16 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    this.auth.refreshToken()
+    let user = this.storage.getLocalUser();
+    if (user !== null) {
+      this.auth.refreshToken()
       .subscribe(response => {
         this.auth.successfulLogin(response.headers.get('Authorization'));
         this.navCtrl.setRoot('CategoriasPage');        
       },
       error => {});
+    }
+   
   }
 
   login() {

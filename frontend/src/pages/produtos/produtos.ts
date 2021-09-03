@@ -35,8 +35,6 @@ export class ProdutosPage {
         this.items = this.items.concat(response['content']);
         let end = this.items.length - 1;
         loader.dismiss();
-        console.log(this.page);
-        console.log(this.items);
         this.loadImageUrls(start, end);
       },
       error => {
@@ -52,7 +50,9 @@ export class ProdutosPage {
         .subscribe(response => {
           item.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.id}-small.jpg`;
         },
-        error => {}
+        error => {
+          console.log("Produto sem imagem no banco de dados");          
+        }
       );
     }
   }  

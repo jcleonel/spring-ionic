@@ -37,7 +37,9 @@ export class ProdutoDetailPage {
       .subscribe(response => {
         this.item.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${this.item.id}.jpg`;
       },
-      error => {}
+      error => {
+        console.log("Produto sem imagem no banco de dados");  
+      }
     );
   }
 

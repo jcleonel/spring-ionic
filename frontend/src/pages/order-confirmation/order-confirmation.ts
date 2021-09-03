@@ -66,7 +66,6 @@ export class OrderConfirmationPage {
     this.pedidoService.insert(this.pedido)
       .subscribe(response => {
         this.cartService.createOrClearCart();
-        console.log(response.headers.get('location'));
         this.codpedido = this.extractId(response.headers.get('location'));
       },
       error => {
