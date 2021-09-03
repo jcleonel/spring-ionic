@@ -4,6 +4,7 @@ import { MenuController } from 'ionic-angular/components/app/menu-controller';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
 import { StorageService } from '../../services/storage.service';
+import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 
 @IonicPage()
 @Component({
@@ -21,7 +22,8 @@ export class HomePage {
     public navCtrl: NavController, 
     public menu: MenuController,
     public auth: AuthService,
-    public storage: StorageService) {
+    public storage: StorageService,
+    public loadingCtrl: LoadingController) {
   
   }
 
@@ -34,6 +36,7 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
+    this.loading();
     let user = this.storage.getLocalUser();
     if (user !== null) {
       this.auth.refreshToken()
@@ -44,6 +47,14 @@ export class HomePage {
       error => {});
     }
    
+  }
+
+  loading() {
+    let loader = this.loadingCtrl.create({
+      content: "Aguarde...",
+      duration: 3000
+    });
+    loader.present();
   }
 
   login() {
