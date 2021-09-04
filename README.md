@@ -4,7 +4,7 @@
 
 ## Sobre o projeto
 
-Esse é um projeto Full Stack Web Mobile completo construído durante o curso de [SpringBoot com Ionic](https://www.udemy.com/course/spring-boot-ionic/) do [Prof. Dr. Nelio Alves](https://devsuperior.com.br/).
+Esse é um projeto Full Stack Web RESTful Mobile completo construído durante o curso de [SpringBoot com Ionic](https://www.udemy.com/course/spring-boot-ionic/) do [Prof. Dr. Nelio Alves](https://devsuperior.com.br/).
 
 Neste projeto foi desenvolvido o login, cadastro de usuário, fluxo completo de navegação de carrinho de compras, fluxo de fechamento de pedido com envio de e-mail de confirmação, tela de perfil de usuário com envio de foto tanto pela câmera.
 
