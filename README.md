@@ -85,4 +85,4 @@ Para ativar o modo responsivo basta apertar **Ctrl + Shift + M**. Na barrinha su
 
 Jean Leonel
 
-https://www.linkedin.com/in/jean-carlos-leonel-da-costa-576b34180/
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jean-carlos-leonel-da-costa-576b34180/)](https://www.linkedin.com/in/jean-carlos-leonel-da-costa-576b34180/)
